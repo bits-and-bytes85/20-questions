@@ -1,8 +1,4 @@
-/*
-Shriya Gautam
-CSE 143
-TA: Yafqa Khan
-*/
+
 
 import java.util.*;
 import java.io.*;
@@ -26,17 +22,14 @@ public class QuestionsGame{
 		public String text;
 		public QuestionNode right;
 		public QuestionNode left;
+		
 		//private constructor for the QuestionNode instance class
-		//takes in text for the node
 		private QuestionNode(String text){
 			this.text = text;
 		}
 	}
 	
-	/*
-	A constructor for the QuestionsGame object. It takes in no parameters, but initializes
-	the game with one object: "computer"
-	*/
+
 	public QuestionsGame(){
 		overallRoot = new QuestionNode("Computer");
 		console = new Scanner(System.in);
@@ -70,16 +63,12 @@ public class QuestionsGame{
 		
 	}
 	
-	//a public method that asks the client a series of yes or no questions
-	//about their object
-	//If the computer guesses the object incorrectly, the user can input their object and
-	//a corresponding yes or no question to add to the computer's question list
+	// asks the client a series of yes or no questiona about their object
+	// If the computer guesses the object incorrectly, the user can input their object and a corresponding yes or no question to add to the computer's question list
 	public void askQuestions(){
 		questionsHelper(overallRoot);
 	}
 	
-	//a private helper method for questions that takes in the tree of questions and goes
-	//through certain questions depending on the client's answers until it guesses an object
 	private QuestionNode questionsHelper(QuestionNode root){
 		if (root.right != null || root.left != null){
 			System.out.println(root.text + " (y/n)?");
@@ -108,8 +97,7 @@ public class QuestionsGame{
 	private QuestionNode updateTree(QuestionNode guess){
 		System.out.println("What was the name of your object?");
 		String newObject = console.next();
-		System.out.println("Please give me a yes/no question that");
-		System.out.println("distinguishes between your object and mine-->");
+		System.out.println("Please give me a yes/no question that distinguishes between your object and mine-->");
 		String newQuestion = "";
 		if (console.hasNextLine()){
 			newQuestion += console.nextLine();
@@ -126,7 +114,6 @@ public class QuestionsGame{
 	//takes in a Scanner and returns nothing
 	public void read(Scanner input){
 		overallRoot = readHelper(input);
-		
 	}
 	
 	//private helper method for read, takes in a Scanner of the input and returns an updated

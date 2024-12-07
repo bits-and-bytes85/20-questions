@@ -3,14 +3,7 @@
 import java.util.*;
 import java.io.*;
 
-/*
-The QuestionsGame class allows the client to guess a
-mystery object by asking a series of yes or no questions
-If the computer fails to guess the object, it prompts the client
-to submit the object they were thinking of along with a yes or no question,
-which allows the computer to improve at the game over time.
-The class can print the current tree of questions in questions.txt
-*/
+
 public class QuestionsGame{
 	private QuestionNode overallRoot;
 	private Scanner console;
